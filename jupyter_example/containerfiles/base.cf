@@ -1,0 +1,10 @@
+FROM ubuntu:22.04 
+
+ARG SH_SCRIPT=base.sh
+ARG TMPDIR=/tmp
+
+COPY ./template/installation_scripts/$SH_SCRIPT $TMPDIR
+
+RUN \
+    bash $TMPDIR/$SH_SCRIPT    && \
+    rm $TMPDIR/$SH_SCRIPT

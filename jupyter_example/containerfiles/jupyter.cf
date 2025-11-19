@@ -1,0 +1,10 @@
+FROM python 
+
+ARG SH_SCRIPT=jupyter.sh
+ARG TMPDIR=/tmp
+
+COPY ./template/installation_scripts/$SH_SCRIPT $TMPDIR
+
+RUN \
+    bash $TMPDIR/$SH_SCRIPT    && \
+    rm $TMPDIR/$SH_SCRIPT

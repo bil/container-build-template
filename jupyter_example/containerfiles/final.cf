@@ -1,0 +1,4 @@
+FROM jupyter
+COPY src/example.ipynb /app/
+ENTRYPOINT ["jupyter","server"]
+CMD ["--ServerApp.ip=*","--ServerApp.port=9000","--ServerApp.open_browser=False","--ServerApp.disable_check_xsrf=True","--ServerApp.allow_origin=*"]

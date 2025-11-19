@@ -1,0 +1,10 @@
+FROM base 
+
+ARG SH_SCRIPT=python.sh
+ARG TMPDIR=/tmp
+
+COPY ./template/installation_scripts/$SH_SCRIPT $TMPDIR
+
+RUN \
+    bash $TMPDIR/$SH_SCRIPT    && \
+    rm $TMPDIR/$SH_SCRIPT

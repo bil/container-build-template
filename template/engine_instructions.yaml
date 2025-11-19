@@ -1,0 +1,41 @@
+---
+#registry is the container registry URL without the image name
+#name is the name of the final image
+#both registry and name are required to push to a remote container registry
+#tag is not yet implemented
+#tag defaults to "latest"
+tagging:
+  registry: 
+  name: 
+  #tag:
+#the base image for the container
+#can be a specific URL or an image name that can be resolved by a container registry
+base: 
+images:
+  - 
+#specific instructions for the container that fall outside of the general installation scripts   
+instructions:
+  #environment variables to set in the container
+  #specify each item as an array element with a name key and a value key
+  #extend as needed with additional array elements
+  #do not leave any empty array elements
+  ENV:
+    - name:
+      value:
+  #files and directories to copy into the container
+  #specify each item as an array element with a src key and a dst key
+  #extend as needed with additional array elements
+  #do not leave any empty array elements
+  COPY:
+    - src: 
+      dst:
+  #the entrypoint for the container
+  #this allows you to run the container as an executable
+  #the default entrypoint is "/bin/bash -c"      
+  #specify excutable, script, command, etc.  as an array, with each space resulting in a new element 
+  ENTRYPOINT:
+    -
+  #arguments to be passed to the entrypoint
+  #specify arguments as an array, with each space resulting in a new element  
+  CMD:
+    - 
